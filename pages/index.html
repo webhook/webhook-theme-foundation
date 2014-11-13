@@ -1,0 +1,60 @@
+{# ------------------------------------------------------- #}
+
+{# YOUR HOMEPAGE #}
+
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+
+{# ------------------------------------------------------- #}
+
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+
+{# This sets our page <title>. It will append "- Homepage" to the site title defined in base. #}
+{% block title %}{% parent %} - Homepage{% endblock %}
+
+{% block content %}
+
+  <div class="row">
+
+    <h1>Hello <a href="http://foundation.zurb.com/">Foundation</a>!</h1>
+
+    <p>
+      This theme installed Foundation's 5.4.7 source SASS and Javascript files.
+      It also set up some <a href="http://gruntjs.com">Grunt</a> watch commands to build CSS from the SASS as you build.
+      You'll need to <strong>restart your local server</strong> to get it to operate properly.
+    </p>
+
+    <h3>If you need to update foundation</h3>
+
+    <ol>
+      <li>Open your terminal and navigate to this site's directory</li>
+      <li>Run <code>grunt copy</code></li>
+    </ol>
+
+    <hr/>
+
+    <p>This is your homepage, located at /pages/index.html.</p>
+
+    <p><a href="/cms/" class="small round button">Looking for the CMS?</a></p>
+
+    {# If you have at least content page type, we show a list. #}
+    {% if cms_types|size !== 0 %}
+
+      <h3>Content types you've created in the CMS so far.</h3>
+
+      <ul>
+      {% for type in cms_types %}
+        <li><a href="{{ url(type) }}">{{ type.name }}</a></li>
+      {% endfor %}
+      </ul>
+
+    {% endif %}
+
+  </div>
+
+{% endblock %}

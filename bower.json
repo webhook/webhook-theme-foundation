@@ -1,0 +1,20 @@
+{
+  "name": "webhook-theme-foundation",
+  "version": "0.0.0",
+  "authors": [
+    "Dave Snider <dave.snider@gmail.com>"
+  ],
+  "description": "Installs foundation into webhook.",
+  "license": "MIT",
+  "homepage": "http://www.webhook.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.x"
+  }
+}
