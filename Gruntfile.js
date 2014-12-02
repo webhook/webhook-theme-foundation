@@ -24,11 +24,12 @@ module.exports = function(grunt) {
       dev: {
         options: {
           style: 'expanded',
+          loadPath: ['sass']
         },
         files: [{
           expand: true,
           cwd: 'sass',
-          src: ['foundation.scss'],
+          src: ['app.scss'],
           dest: 'static/css',
           ext: '.css'
         }]
